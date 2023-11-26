@@ -2,26 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* 
+--primary-color: #ff6e4e;
+--secondary-color: #C4FF69;
+--accent-color: #00bf63;
+*/
+/* Navbar */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+nav {
+  @apply px-[40px] py-[12px] bg-[#00bf63] w-full h-auto flex justify-between items-center;
+}
+nav .logoBox a {
+  @apply w-[40px] flex items-center gap-[1px] font-bold text-xl text-[#fff];
+}
+.tabs {
+  @apply flex items-center gap-3 justify-center text-base font-medium text-[#fff];
+}
+.auth-btns,
+.auth-btn {
+  @apply flex items-center;
+}
+.auth-btns {
+  @apply gap-4;
+}
+.auth-btn {
+  @apply gap-2 bg-[#C4FF69] px-[12px] py-[4px] font-medium text-base rounded-md text-[#00bf63] transition-all duration-1000;
+}
+.auth-btn:hover {
+  @apply bg-[#b0e264] text-[#202020] shadow-md shadow-green-300;
+}
+.mobile-menu {
+  @apply hidden;
+}
+/* Navbar */
+
+/* subnav */
+.subnav-box {
+  @apply w-full h-auto bg-green-600 flex items-center gap-2;
+}
+.conatct-us-info {
+  @apply bg-[#ff6e4e] w-[40%] px-4 py-2 flex items-center gap-3;
+}
+.conatct-us-info a{
+  @apply flex items-center gap-2 text-[#fff] font-bold text-base transition-all ease-in-out duration-700;
+}
+.conatct-us-info a:hover{
+  @apply text-[#474747] underline;
+}
+.marquee {
+  @apply w-[60%];
+}
+/* subnav */
+
+/* Responsive Design */
+
+/* Mobile-View */
+
+/* Mobile-View 440 to 320*/
+@media (max-width: 440px) and (min-width: 320px) {
+  /* Navbar */
+  nav {
+    @apply px-[20px] py-[6px] bg-[#00bf63] w-full h-auto flex justify-between items-center;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .mobile-menu {
+    @apply block text-[#fff] text-2xl;
+  }
+  .mobile-menu i svg {
+    @apply text-[#fff] text-3xl;
+  }
+  .tabs,
+  .auth-btns {
+    @apply hidden;
+  }
+  /* Navbar */
+  /* Sub-Navbar */
+  .conatct-us-info{
+    @apply justify-center;
+  }
+  .conatct-us-info a h3{
+    @apply hidden;
+  }
+  /* Sub-Navbar */
 }
